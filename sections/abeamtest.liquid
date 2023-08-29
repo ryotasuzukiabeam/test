@@ -1,0 +1,46 @@
+<section class="page-width">
+    <h3>{{ section.settings.title }}</h3>
+      <dl>
+ {% for block in section.blocks %}
+        <dt>{{ block.settings.title }}</dt>
+        <dd>{{ block.settings.text2 }}</dd>
+{% endfor %}
+      </dl>
+    </section>
+    {% schema %}
+      {
+        "name": "test",
+        "settings":[
+        {
+            "type": "text",
+            "id": "title",
+            "default": "タイトル",
+            "label": "タイトル"
+        }
+        ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "テキスト",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "テキスト入力"
+        },
+        {
+          "type": "text",
+          "id": "text2",
+          "label": "テキスト入力"
+        }
+      ]
+    }
+  ],
+  "presets": [
+      {
+    "name": "test"
+      }    
+        ]
+      }
+    {% endschema %}
+    
